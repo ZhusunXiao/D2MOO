@@ -847,4 +847,7 @@ extern "C" __declspec(dllexport) void t()
     volatile D2CubeItemStrc D2CubeItemStrc_ = {};
 
     volatile SMSGHANDLER_PARAMS SMSGHANDLER_PARAMS_ = {};
+
+    volatile D2C_StringIndices D2C_StringIndices_ = {};
+    
 }
