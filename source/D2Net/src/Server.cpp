@@ -854,7 +854,7 @@ SOCKET __stdcall SERVER_GetSocketFromClientId(int32_t nClientId)
 }
 
 //D2Net.0x6FC02470 (#10015)
-void __stdcall D2NET_10015(int32_t nClientId, const char* szFile, int32_t nLine)
+void __stdcall D2NET_10015(uint32_t nClientId, const char* szFile, int32_t nLine)
 {
 	FOG_10162(gpServer, nClientId, szFile, nLine);
 }
@@ -914,7 +914,7 @@ int32_t __stdcall SERVER_SetClientGameGUID(int32_t nClientId, int32_t dwGameGuid
 }
 
 //D2Net.0x6FC02580 (#10021)
-int32_t __stdcall SERVER_GetClientGameGUID(int32_t nClientId)
+uint32_t __stdcall SERVER_GetClientGameGUID(uint32_t nClientId)
 {
 	if (nClientId)
 	{

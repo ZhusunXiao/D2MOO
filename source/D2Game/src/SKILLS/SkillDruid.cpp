@@ -162,9 +162,9 @@ void __fastcall sub_6FCFE030(D2UnitStrc* pUnit, int32_t nStateId, D2StatListStrc
         return;
     }
 
-    int32_t nUnitType = 6;
+    auto nUnitType = 6u;
     int32_t nClassId = -1;
-    int32_t nMode = 10;
+    auto nMode = 10u;
     if (pUnit)
     {
         nUnitType = pUnit->dwUnitType;

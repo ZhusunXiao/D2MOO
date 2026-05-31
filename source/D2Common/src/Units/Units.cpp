@@ -719,9 +719,9 @@ void __stdcall UNITS_SetAnimStartFrame(D2UnitStrc* pUnit)
 	pUnit->nActionFrame = 0;
 	pUnit->nSeqCurrentFramePrecise = UNITS_GetFrameBonus(pUnit) << 8;
 
-	int nUnitType = pUnit->dwUnitType;
+	auto nUnitType = pUnit->dwUnitType;
 	int nClassId = pUnit->dwClassId;
-	int nNewMode = pUnit->dwAnimMode;
+	auto nNewMode = pUnit->dwAnimMode;
 
 	D2COMMON_11013_ConvertMode(pUnit, &nUnitType, &nClassId, &nNewMode, __FILE__, __LINE__);
 
@@ -1709,7 +1709,7 @@ void __stdcall UNITS_UpdateAnimRateAndVelocity(D2UnitStrc* pUnit, const char* sz
 		return;
 	}
 
-	int nUnitType = pUnit->dwUnitType;
+	uint32_t nUnitType = pUnit->dwUnitType;
 	if (nUnitType >= UNIT_TILE)
 	{
 		FOG_Trace("UnitUpdateAnimRateAndVel(): invalid unit (TYPE:%d)  FILE:%s  LINE:%d", nUnitType, szFile, nLine);
@@ -1721,7 +1721,7 @@ void __stdcall UNITS_UpdateAnimRateAndVelocity(D2UnitStrc* pUnit, const char* sz
 	}
 
 	int nClassId = pUnit->dwClassId;
-	int nAnimMode = pUnit->dwAnimMode;
+	auto nAnimMode = pUnit->dwAnimMode;
 	D2COMMON_11013_ConvertMode(pUnit, &nUnitType, &nClassId, &nAnimMode, __FILE__, __LINE__);
 	UNITS_SetAnimData(pUnit, nUnitType, nClassId, nAnimMode);
 	pUnit->pAnimData = DATATBLS_GetAnimDataRecord(pUnit, nClassId, nAnimMode, nUnitType, pUnit->pInventory);
@@ -2681,8 +2681,8 @@ int __stdcall UNITS_GetFrameBonus(D2UnitStrc* pUnit)
 	};
 	
 	int nClassId = -1;
-	int nType = UNIT_TYPES_COUNT;
-	int nMode = 0;
+	uint32_t nType = UNIT_TYPES_COUNT;
+	auto nMode = 0u;
 	if (pUnit)
 	{
 		nClassId = pUnit->dwClassId;

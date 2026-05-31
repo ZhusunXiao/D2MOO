@@ -63,7 +63,7 @@ D2COMMON_DLL_DECL int __stdcall COMPOSIT_GetWeaponClassIdFromCode(int nWeaponCla
 //D2Common.0x6FD46C90 (#10887)
 D2COMMON_DLL_DECL int __stdcall COMPOSIT_GetWeaponClassCode(D2UnitStrc* pUnit, int nUnitType, int nClass, int nMode, D2InventoryStrc* pInventory, int* pWeaponClassId);
 //D2Common.0x6FD47150 (#10888)
-D2COMMON_DLL_DECL int __stdcall COMPOSIT_GetWeaponClassId(D2UnitStrc* pUnit, D2InventoryStrc* pInventory, int* pWeaponClassId, int nAnimMode, BOOL a5);
+D2COMMON_DLL_DECL int __stdcall COMPOSIT_GetWeaponClassId(D2UnitStrc* pUnit, D2InventoryStrc* pInventory, int* pWeaponClassId, uint32_t nAnimMode, BOOL a5);
 //D2Common.0x6FD47200 (#10889)
 D2COMMON_DLL_DECL BOOL __stdcall COMPOSIT_IsArmorComponent(int nComponent);
 //D2Common.0x6FD47230 (#10890)

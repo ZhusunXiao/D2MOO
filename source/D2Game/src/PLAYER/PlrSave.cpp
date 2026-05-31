@@ -475,7 +475,7 @@ int32_t __fastcall sub_6FC8A0F0(D2GameStrc* pGame, D2UnitStrc* pUnit, uint8_t* p
 }
 
 //D2Game.0x6FC8A140
-int32_t __fastcall D2GAME_SAVE_CalculateChecksum_6FC8A140(D2SaveHeaderStrc* pSaveHeader, int32_t nSize)
+uint32_t __fastcall D2GAME_SAVE_CalculateChecksum_6FC8A140(D2SaveHeaderStrc* pSaveHeader, uint32_t nSize)
 {
     int32_t nCheckSum = 0;
     int32_t nLastTime = 0;

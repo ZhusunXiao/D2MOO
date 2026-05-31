@@ -10,6 +10,14 @@
 
 
 #pragma pack(push, 1)
+
+struct PALETTEENTRY_CP {
+    uint8_t        peRed;
+    uint8_t        peGreen;
+    uint8_t        peBlue;
+    uint8_t        peFlags;
+};
+
 struct D2PaletteTableStrc
 {
 	void* transPalettes[3];
@@ -22,7 +30,7 @@ struct D2PaletteTableStrc
 	void* pStandardColorsPalette;
 	uint8_t* unk0x118;
 	uint8_t* unk0x11C;
-	PALETTEENTRY datFilePalette[256];
+	PALETTEENTRY_CP datFilePalette[256];
 };
 
 struct D2GfxCellNodeStrc

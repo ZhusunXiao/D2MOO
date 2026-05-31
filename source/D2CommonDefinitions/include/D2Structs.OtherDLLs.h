@@ -1,4 +1,16 @@
 #pragma once
+#pragma pack(1)
+struct D2MenuItemStrc;
+struct D2WinMsgStrc;
+struct D2CellFileStrc;
+struct D2GfxCellStrc;
+struct D2GfxSettingsStrc;
+struct D2GfxHelperStrc;
+struct D2GfxLightExStrc;
+struct D2GfxCellNodeStrc;
+struct D2UnitStrc;
+struct D2GfxDataStrc;
+struct D2GfxLightStrc;
 
 // Archive of types that are probably coming from other DLLs.
 
@@ -89,7 +101,7 @@ struct D2KeyConfigStrc
 
 
 typedef int32_t(__fastcall* MENUENABLED)();
-typedef void(__fastcall* MENUSELECT)(D2MenuItemStrc*, SMSGHANDLER_PARAMS*);
+typedef void(__fastcall* MENUSELECT)(D2MenuItemStrc*, void*);
 typedef void(__fastcall* MENUOPTION)(D2MenuItemStrc*, int32_t);
 typedef void(__fastcall* MENUUPDATE)(D2MenuItemStrc*, int32_t);
 
@@ -191,11 +203,11 @@ struct D2QuestUiTabStrc
 };
 
 
-struct D2WindowPlacementStrc
-{
-	HWND hWnd;								//0x00
-	WINDOWPLACEMENT windowPlacement;		//0x04
-};
+// struct D2WindowPlacementStrc
+// {
+// 	HWND hWnd;								//0x00
+// 	WINDOWPLACEMENT windowPlacement;		//0x04
+// };
 
 struct SMSGHANDLER_PARAMS
 {

@@ -601,7 +601,8 @@ int32_t __stdcall GAME_ReceiveDatabaseCharacter(int32_t nClientId, const uint8_t
         return 0;
     }
 
-	pClient->nSaveCreationTimestamp = *pSaveCreationTimestamp;
+    pClient->nSaveCreationTimestamp.dwHighDateTime = pSaveCreationTimestamp->dwHighDateTime;
+    pClient->nSaveCreationTimestamp.dwLowDateTime = pSaveCreationTimestamp->dwLowDateTime;
 
 	D2_UNLOCK(pGame->lpCriticalSection);
 
@@ -838,7 +839,7 @@ void __fastcall GAME_SendPacket0x5CToAllConnectedClients(D2GameStrc* pGame, D2Cl
 }
 
 //D2Game.0x6FC36AE0
-BOOL __fastcall GAME_VerifyJoinAct(int32_t nClientId)
+BOOL __fastcall GAME_VerifyJoinAct(uint32_t nClientId)
 {
     if (CLIENTS_CheckState(nClientId, CLIENTSTATE_GAME_INIT_SENT))
     {
@@ -852,7 +853,7 @@ BOOL __fastcall GAME_VerifyJoinAct(int32_t nClientId)
 }
 
 //D2Game.0x6FC36B20
-void __stdcall sub_6FC36B20(int32_t nClientId, const char* szFile, int32_t nLine)
+void __stdcall sub_6FC36B20(uint32_t nClientId, const char* szFile, int32_t nLine)
 {
     const int32_t nGameGUID = SERVER_GetClientGameGUID(nClientId);
     if (gpGameDataTbl_6FD45818)
@@ -1198,7 +1199,7 @@ void __fastcall GAME_FreeGame(D2GameGUID nGameGUID, D2GameStrc* pGame)
 }
 
 //D2Game.0x6FC37560
-BOOL __fastcall GAME_VerifyEndGame(int32_t nClientId)
+BOOL __fastcall GAME_VerifyEndGame(uint32_t nClientId)
 {
     if (CLIENTS_CheckState(nClientId, CLIENTSTATE_INGAME))
     {
@@ -1240,7 +1241,7 @@ void __fastcall GAME_TriggerClientSave(D2ClientStrc* pClient, D2GameStrc* pGame)
                 const int32_t nExperience = STATLIST_GetUnitBaseStat(pPlayer, STAT_EXPERIENCE, 0);
                 const int32_t nLevel = STATLIST_GetUnitBaseStat(pPlayer, STAT_LEVEL, 0);
                 const char* szClientName = CLIENTS_GetName(i);
-                gpD2EventCallbackTable_6FD45830->pfUpdateCharacterLadder(szClientName, pPlayer->dwClassId, nLevel, nExperience, 0, CLIENTS_GetFlags(i), &i->nSaveCreationTimestamp);
+                gpD2EventCallbackTable_6FD45830->pfUpdateCharacterLadder(szClientName, pPlayer->dwClassId, nLevel, nExperience, 0, CLIENTS_GetFlags(i), (FILETIME *)&i->nSaveCreationTimestamp);
             }
         }
     }
@@ -1440,7 +1441,7 @@ void __fastcall CLIENT_SendSaveHeaderPart_6FC37B90(D2GameStrc* pGame, D2ClientSt
 }
 
 //D2Game.0x6FC37CE0
-void __fastcall GAME_EndGame(int32_t nClientId, int32_t a2)
+void __fastcall GAME_EndGame(uint32_t nClientId, int32_t a2)
 {
     D2GameStrc* pGame = GAME_LockGame(SERVER_GetClientGameGUID(nClientId));
 
@@ -1481,7 +1482,7 @@ void __fastcall GAME_EndGame(int32_t nClientId, int32_t a2)
                         STATLIST_GetUnitBaseStat(pUnit, STAT_EXPERIENCE, 0),
                         0,
                         CLIENTS_GetFlags(i),
-                        &i->nSaveCreationTimestamp
+                        (FILETIME *)&i->nSaveCreationTimestamp
                     );
                 }
             }
@@ -1990,7 +1991,7 @@ void __fastcall D2GAME_UpdateAllClients_6FC389C0(D2GameStrc* pGame)
                             STATLIST_GetUnitBaseStat(pPlayer, STAT_EXPERIENCE, 0),
                             0,
                             CLIENTS_GetFlags(pClient),
-                            &pClient->nSaveCreationTimestamp
+                            (FILETIME *)&pClient->nSaveCreationTimestamp
                         );
                     }
                 }
@@ -2018,7 +2019,7 @@ void __fastcall D2GAME_UpdateAllClients_6FC389C0(D2GameStrc* pGame)
                         STATLIST_GetUnitBaseStat(pPlayer, STAT_EXPERIENCE, 0),
                         0,
                         CLIENTS_GetFlags(pClient),
-                        &pClient->nSaveCreationTimestamp
+                        (FILETIME *)&pClient->nSaveCreationTimestamp
                     );
                 }
             }
@@ -2375,7 +2376,7 @@ void __stdcall GAME_UpdateClients(int32_t a1, int32_t a2)
 }
 
 //D2Game.0x6FC394E0
-D2GameStrc* __fastcall GAME_GetGameByClientId(int32_t nClientId)
+D2GameStrc* __fastcall GAME_GetGameByClientId(uint32_t nClientId)
 {
     const int32_t nGameGUID = SERVER_GetClientGameGUID(nClientId);
 

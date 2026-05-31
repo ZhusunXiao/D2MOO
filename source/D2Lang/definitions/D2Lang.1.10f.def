@@ -5,8 +5,8 @@ EXPORTS
     ??BUnicode@@QBEGXZ @10016 ; Unicode::unsigned short() const
     ??_FUnicode@@QAEXXZ @10017 ; Unicode::`default constructor closure` 
 ;   D2LANG_10018 @10018 ; ?Personalize@Unicode@@SIXPAU1@PBU1@1HW4ELANGUAGE@@@Z
-    ?_toLowerTable@Unicode@@0PAGA @10019 ; Unicode::_toLowerTable
-    ?_toUpperTable@Unicode@@0PAGA @10020 ; Unicode::_toUpperTable
+;    ?_toLowerTable@Unicode@@0PAGA @10019 ; Unicode::_toLowerTable
+;    ?_toUpperTable@Unicode@@0PAGA @10020 ; Unicode::_toUpperTable
     ?compare@Unicode@@QBEHU1@@Z @10021 ; Unicode::compare
     ?compare@Unicode@@SIHU1@0@Z @10022 ; static Unicode::compare
     ?directionality@Unicode@@QAE?AW4Direction@1@XZ @10023 ; Unicode::directionality
@@ -58,8 +58,8 @@ EXPORTS
 ;   D2LANG_10006 @10006 NONAME
     STRTABLE_GetLanguage @10007 NONAME
 ;   D2LANG_10008 @10008 NONAME
-    STR_GroupIntDigits @10009 NONAME
-    STR_GroupUintDigits @10010 NONAME
+;    STR_GroupIntDigits @10009 NONAME
+;    STR_GroupUintDigits @10010 NONAME
 ;   D2LANG_10011 @10011 NONAME
 ;   D2LANG_10012 @10012 NONAME
     D2LANG_GetTblIndex @10013 NONAME

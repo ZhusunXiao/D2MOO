@@ -889,7 +889,7 @@ void __fastcall sub_6FC3D830(D2ClientStrc* pClient, BYTE nHeader, int32_t nUnitG
 }
 
 //D2Game.0x6FC3D890
-void __fastcall sub_6FC3D890(D2ClientStrc* pClient, uint16_t a2, uint16_t a3, uint16_t a4, uint8_t a5, uint8_t a6, uint16_t a7, uint16_t a8, uint8_t a9, uint8_t a10)
+void __fastcall sub_6FC3D890(D2ClientStrc* pClient, int32_t a2, int32_t a3, int32_t a4, int32_t a5, int32_t a6, int16_t a7, int16_t a8, uint8_t a9, uint8_t a10)
 {
     D2GSPacketSrv18 packet18 = {};
     D2BitBufferStrc bitBuffer = {};
@@ -911,7 +911,7 @@ void __fastcall sub_6FC3D890(D2ClientStrc* pClient, uint16_t a2, uint16_t a3, ui
 }
 
 //D2Game.0x6FC3D9A0
-void __fastcall sub_6FC3D9A0(D2ClientStrc* pClient, uint16_t a2, uint16_t a3, uint16_t a4, uint16_t a5, uint16_t a6, uint8_t a7, uint8_t a8)
+void __fastcall sub_6FC3D9A0(D2ClientStrc* pClient, int32_t a2, int32_t a3, int32_t a4, int16_t a5, int16_t a6, uint8_t a7, uint8_t a8)
 {
     D2GSPacketSrv95 packet95 = {};
     D2BitBufferStrc bitBuffer = {};
@@ -1022,7 +1022,7 @@ void __fastcall sub_6FC3DCA0(D2ClientStrc* pClient, D2UnitStrc* pUnit)
         ++nSkillCount;
     }
 
-    const int32_t nPacketLength = sizeof(D2GSPacketSrv94::SkillInfo) * nSkillCount + offsetof(D2GSPacketSrv94, Skills);
+    const int32_t nPacketLength = sizeof(SkillInfo) * nSkillCount + offsetof(D2GSPacketSrv94, Skills);
     D2GameStrc* pGame = CLIENTS_GetGame(pClient);
     D2GSPacketSrv94* pPacket94 = (D2GSPacketSrv94*)D2_ALLOC_POOL(pGame->pMemoryPool, nPacketLength);
     

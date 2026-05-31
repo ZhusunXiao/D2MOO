@@ -217,9 +217,9 @@ void __fastcall D2GAME_ITEMMODE_ServerStatlistCallback_6FC41910(D2GameStrc* pGam
             }
             else
             {
-                int32_t nOwnerUnitType = pOwner->dwUnitType;
+                auto nOwnerUnitType = pOwner->dwUnitType;
                 int32_t nOwnerClassId = pOwner->dwClassId;
-                int32_t nAnimMode = pOwner->dwAnimMode;
+                auto nAnimMode = pOwner->dwAnimMode;
                 D2COMMON_11013_ConvertMode(pOwner, &nOwnerUnitType, &nOwnerClassId, &nAnimMode, __FILE__, __LINE__);
                 if (nOwnerUnitType == UNIT_PLAYER && nOwnerClassId == nSkillClassId)
                 {
@@ -244,9 +244,9 @@ void __fastcall D2GAME_ITEMMODE_ServerStatlistCallback_6FC41910(D2GameStrc* pGam
             }
             else
             {
-                int32_t nOwnerUnitType = pOwner->dwUnitType;
+                auto nOwnerUnitType = pOwner->dwUnitType;
                 int32_t nOwnerClassId = pOwner->dwClassId;
-                int32_t nAnimMode = pOwner->dwAnimMode;
+                auto nAnimMode = pOwner->dwAnimMode;
                 D2COMMON_11013_ConvertMode(pOwner, &nOwnerUnitType, &nOwnerClassId, &nAnimMode, __FILE__, __LINE__);
                 if (nOwnerUnitType == UNIT_PLAYER && nOwnerClassId == nSkillClassId)
                 {
@@ -6287,7 +6287,7 @@ int32_t __fastcall sub_6FC4C5F0_End(D2GameStrc* pGame, D2UnitStrc* pItem, D2Item
         case ITEMQUAL_TEMPERED:
             if (pItemsTxtRecord->wAutoPrefix)
             {
-                const int16_t nAutoAffix = ITEMS_RollMagicAffixes(pItem, 0, 1, 0, 1, 0, pItemsTxtRecord->wAutoPrefix);
+                const int16_t nAutoAffix = ITEMS_RollMagicAffixes2(pItem, 0, 1, 0, 1, 0, pItemsTxtRecord->wAutoPrefix);
                 if (nAutoAffix)
                 {
                     ITEMS_SetAutoAffix(pItem, nAutoAffix);

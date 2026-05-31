@@ -86,9 +86,9 @@ void __fastcall D2GAME_PACKETS_SendPacket0xA5_6FC3D7F0(D2ClientStrc* pClient, ui
 //D2Game.0x6FC3D830
 void __fastcall sub_6FC3D830(D2ClientStrc* pClient, BYTE nHeader, int32_t nUnitGUID, WORD nStatId, int32_t nValue);
 //D2Game.0x6FC3D890
-void __fastcall sub_6FC3D890(D2ClientStrc* pClient, uint16_t a2, uint16_t a3, uint16_t a4, uint8_t a5, uint8_t a6, uint16_t a7, uint16_t a8, uint8_t a9, uint8_t a10);
+void __fastcall sub_6FC3D890(D2ClientStrc* pClient, int32_t a2, int32_t a3, int32_t a4, int32_t a5, int32_t a6, int16_t a7, int16_t a8, uint8_t a9, uint8_t a10);
 //D2Game.0x6FC3D9A0
-void __fastcall sub_6FC3D9A0(D2ClientStrc* pClient, uint16_t a2, uint16_t a3, uint16_t a4, uint16_t a5, uint16_t a6, uint8_t a7, uint8_t a8);
+void __fastcall sub_6FC3D9A0(D2ClientStrc* pClient, int32_t a2, int32_t a3, int32_t a4, int16_t a5, int16_t a6, uint8_t a7, uint8_t a8);
 //D2Game.0x6FC3DA90
 void __fastcall D2GAME_PACKETS_SendPacket0x96_WalkVerify_6FC3DA90(D2ClientStrc* pClient, uint16_t a2, uint16_t a3, uint16_t a4, uint8_t a5, uint8_t a6);
 //D2Game.0x6FC3DB50

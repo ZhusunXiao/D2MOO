@@ -181,8 +181,8 @@ void __stdcall D2Common_10884_COMPOSIT_unk(D2UnitStrc* pUnit, int nClass, int nM
 void __stdcall D2Common_10885_COMPOSIT_unk(D2UnitStrc* pUnit, char* szPath, int* pWeaponClassCode, BOOL bAddPathPrefix, int a5, D2InventoryStrc* pInventory, int nAnimMode)
 {
 	int nClass = 0;
-	int nType = 0;
-	int nMode = 0;
+	auto nType = 0u;
+	auto nMode = 0u;
 
 	D2_ASSERT(pUnit);
 
@@ -387,10 +387,10 @@ int __stdcall COMPOSIT_GetWeaponClassCode(D2UnitStrc* pUnit, int nUnitType, int 
 }
 
 //D2Common.0x6FD47150 (#10888)
-int __stdcall COMPOSIT_GetWeaponClassId(D2UnitStrc* pUnit, D2InventoryStrc* pInventory, int* pWeaponClassId, int nAnimMode, BOOL a5)
+int __stdcall COMPOSIT_GetWeaponClassId(D2UnitStrc* pUnit, D2InventoryStrc* pInventory, int* pWeaponClassId, uint32_t nAnimMode, BOOL a5)
 {
 	int nClass = 0;
-	int nType = 0;
+	auto nType = 0u;
 	int nMode = 0;
 
 	if (pUnit)
@@ -434,8 +434,8 @@ BOOL __stdcall COMPOSIT_IsWeaponBowOrXBow(D2UnitStrc* pUnit)
 {
 	int nWeaponClassId = 0;
 	int nClass = 0;
-	int nType = 0;
-	int nMode = 0;
+	auto nType = 0u;
+	auto nMode = 0u;
 
 	nType = pUnit->dwUnitType;
 	nClass = pUnit->dwClassId;

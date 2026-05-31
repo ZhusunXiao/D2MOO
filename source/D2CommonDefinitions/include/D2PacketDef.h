@@ -335,7 +335,6 @@ struct D2GSPacketClt3A		//size of 0x07
 {
 	uint8_t nHeader;			//0x00
 	uint16_t nStat;				//0x01
-	int32_t nPoints;			//0x03 ???
 };
 
 struct D2GSPacketClt3B		//size of 0x03
@@ -1807,16 +1806,18 @@ struct D2GSPacketSrv93		//size of 0x08
 	uint8_t unk0x001[7];			//0x01
 };
 
+struct SkillInfo			//0x06
+	{
+		uint16_t nSkill;
+		uint8_t nSkillLevel;
+	};
+
 struct D2GSPacketSrv94		//variable size
 {
 	uint8_t nHeader;			//0x00
 	uint8_t nSkills;			//0x01
 	uint32_t dwUnitGUID;		//0x02
-	struct SkillInfo			//0x06
-	{
-		uint16_t nSkill;
-		uint8_t nSkillLevel;
-	} Skills[255];
+	SkillInfo Skills[255];
 };
 
 struct D2GSPacketSrv95		//size of 0x0D

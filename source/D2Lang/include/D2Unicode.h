@@ -358,8 +358,9 @@ struct D2LANG_DLL_DECL Unicode {
    *
    * D2Lang.[0x6FC1D508 to 0x6FC1D708) (#10019) ?_toLowerTable@Unicode@@0PAGA
    */
-  static unsigned short _toLowerTable[256];
+};
+  extern  unsigned short _toLowerTable[256];
 
   // D2Lang.[0x6FC1D308 to 0x6FC1D508) (#10020) ?_toUpperTable@Unicode@@0PAGA
-  static unsigned short _toUpperTable[256];
-};
+  extern unsigned short _toUpperTable[256];
+

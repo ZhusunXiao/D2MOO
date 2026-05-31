@@ -127,10 +127,10 @@ struct D2SkillDescTxt
 	uint8_t nListRow;						//0x05
 	uint8_t nListPool;						//0x06
 	uint8_t nIconCel;						//0x07
-	uint16_t wStrName;						//0x08
-	uint16_t wStrShort;						//0x0A
-	uint16_t wStrLong;						//0x0C
-	uint16_t wStrAlt;						//0x0E
+	int16_t wStrName;						//0x08
+	int16_t wStrShort;						//0x0A
+	int16_t wStrLong;						//0x0C
+	int16_t wStrAlt;						//0x0E
 	uint16_t wStrMana;						//0x10
 	uint16_t wDescDam;						//0x12
 	uint16_t wDescAtt;						//0x14

@@ -2846,7 +2846,7 @@ int __stdcall D2Common_11014_ConvertShapeShiftedMode(int nArrayIndex, int nMonst
 }
 
 //D2Common.0x6FDB30A0 (#11013)
-void __stdcall D2COMMON_11013_ConvertMode(D2UnitStrc* pUnit, int* pType, int* pClass, int* pMode, const char* szFile, int nLine)
+void __stdcall D2COMMON_11013_ConvertMode(D2UnitStrc* pUnit, uint32_t* pType, int* pClass, uint32_t* pMode, const char* szFile, int nLine)
 {
 	if (!(pUnit && (pUnit->dwFlagEx & UNITFLAGEX_ISSHAPESHIFTED) && sgptDataTables->nTransformStates > 0))
 	{

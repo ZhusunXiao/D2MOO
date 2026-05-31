@@ -25,7 +25,7 @@
 #include <D2Unicode.h>
 #include <D2StrTable.h>
 
-unsigned short Unicode::_toLowerTable[256] = {
+unsigned short _toLowerTable[256] = {
   // C0 Controls
   '\0', 0x01, 0x02, 0x03, 0x04, 0x05, 0x06, '\a', '\b', '\t', '\n',
   '\v', '\f', '\r', 0x0E, 0x0F, 0x10, 0x11, 0x12, 0x13, 0x14, 0x15, 0x16,
@@ -81,7 +81,7 @@ unsigned short Unicode::_toLowerTable[256] = {
   0x9F
 };
 
-unsigned short Unicode::_toUpperTable[256] = {
+unsigned short _toUpperTable[256] = {
   // C0 Controls
   L'\0', 0x01, 0x02, 0x03, 0x04, 0x05, 0x06, L'\a', L'\b', L'\t', L'\n',
   L'\v', L'\f', L'\r', 0x0E, 0x0F, 0x10, 0x11, 0x12, 0x13, 0x14, 0x15, 0x16,
@@ -332,7 +332,7 @@ Unicode Unicode::toLower() const {
 
   // Vanilla bug: Returns uppercase for characters in the
   // "Latin-1 Supplement" block.
-  return Unicode::_toLowerTable[this->ch];
+  return _toLowerTable[this->ch];
 }
 
 Unicode Unicode::toUpper() const {
@@ -340,5 +340,5 @@ Unicode Unicode::toUpper() const {
     return this->ch;
   }
 
-  return Unicode::_toUpperTable[this->ch];
+  return _toUpperTable[this->ch];
 }

@@ -6,9 +6,9 @@
 #include "D2Net.h"
 #include "Packet.h"
 
-using D2NET_Unk_Callback = void (__stdcall*) (int32_t nClientId, const char* szFile, int32_t nLine);
+using D2NET_Unk_Callback = void (__stdcall*) (uint32_t nClientId, const char* szFile, int32_t nLine);
 using D2NET_CLIENT_SendFunctionType = int32_t (__stdcall*) (int32_t nUnused, const uint8_t* pBuffer, int32_t nBufferSize);
-using D2NET_SERVER_GetClientGameGUIDFunctionType = int32_t(__stdcall*)(int32_t nClientId);
+using D2NET_SERVER_GetClientGameGUIDFunctionType = uint32_t(__stdcall*)(uint32_t nClientId);
 
 //D2Net.0x6FC01B30 (#10024)
 D2NET_DLL_DECL int32_t __stdcall SERVER_WSAGetLastError();
@@ -61,7 +61,7 @@ D2NET_DLL_DECL int32_t __stdcall SERVER_GetIpAddressFromClientId(int32_t nClient
 //D2Net.0x6FC02450 (#10037)
 D2NET_DLL_DECL SOCKET __stdcall SERVER_GetSocketFromClientId(int32_t nClientId);
 //D2Net.0x6FC02470 (#10015)
-D2NET_DLL_DECL void __stdcall D2NET_10015(int32_t nClientId, const char* szFile, int32_t nLine);
+D2NET_DLL_DECL void __stdcall D2NET_10015(uint32_t nClientId, const char* szFile, int32_t nLine);
 //D2Net.0x6FC02490 (#10032)
 D2NET_DLL_DECL void __stdcall D2NET_10032(int32_t nClientId, const char* szFile, int32_t nLine);
 //D2Net.0x6FC024B0 (#10033)
@@ -77,7 +77,7 @@ D2NET_DLL_DECL int32_t __stdcall D2NET_10019(D2NET_Unk_Callback pfCallback);
 //D2Net.0x6FC02550 (#10020)
 D2NET_DLL_DECL int32_t __stdcall SERVER_SetClientGameGUID(int32_t nClientId, int32_t dwGameGuid);
 //D2Net.0x6FC02580 (#10021)
-D2NET_DLL_DECL int32_t __stdcall SERVER_GetClientGameGUID(int32_t nClientId);
+D2NET_DLL_DECL uint32_t __stdcall SERVER_GetClientGameGUID(uint32_t nClientId);
 //D2Net.0x6FC025A0
 int32_t __fastcall SERVER_EnqueuePacketToMessageList(const uint8_t* pBuffer, int32_t nBufferSize);
 //D2Net.0x6FC025F0 (#10022)

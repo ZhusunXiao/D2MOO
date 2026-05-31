@@ -1170,7 +1170,7 @@ void __fastcall SUNITDMG_ExecuteEvents(D2GameStrc* pGame, D2UnitStrc* pAttacker,
 			pDamage->dwLifeLeech <<= 6;
 			pDamage->dwManaLeech <<= 6;
 
-			int32_t nUnitType = 0;
+			uint32_t nUnitType = 0;
 			if (pAttacker)
 			{
 				if (pAttacker->dwUnitType == UNIT_PLAYER)
@@ -1192,7 +1192,7 @@ void __fastcall SUNITDMG_ExecuteEvents(D2GameStrc* pGame, D2UnitStrc* pAttacker,
 					{
 						nUnitType = pAttacker->dwUnitType;
 						int32_t nClassId = pAttacker->dwClassId;
-						int32_t nAnimMode = pAttacker->dwAnimMode;
+						auto nAnimMode = pAttacker->dwAnimMode;
 						D2COMMON_11013_ConvertMode(pAttacker, &nUnitType, &nClassId, &nAnimMode, __FILE__, __LINE__);
 					}
 				}
@@ -1201,7 +1201,7 @@ void __fastcall SUNITDMG_ExecuteEvents(D2GameStrc* pGame, D2UnitStrc* pAttacker,
 			{
 				nUnitType = 6;
 				int32_t nClassId = -1;
-				int32_t nAnimMode = 0;
+				auto nAnimMode = 0u;
 				D2COMMON_11013_ConvertMode(pAttacker, &nUnitType, &nClassId, &nAnimMode, __FILE__, __LINE__);
 			}
 

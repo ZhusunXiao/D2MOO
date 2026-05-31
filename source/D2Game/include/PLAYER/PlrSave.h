@@ -27,6 +27,8 @@ struct D2SavedItemStrc
     uint16_t nItemFormat;
     uint32_t nItemCode;
 };
+
+struct D2ClientInfoStrc;
 #pragma pack(pop)
 
 
@@ -47,9 +49,9 @@ int32_t __stdcall PLRSAVE_WriteItems_6FC89B50(D2InventoryStrc* pInventory, uint8
 //D2Game.0x6FC8A0F0
 int32_t __fastcall sub_6FC8A0F0(D2GameStrc* pGame, D2UnitStrc* pUnit, uint8_t* pSection, int32_t nSize, int32_t a5, int32_t a6);
 //D2Game.0x6FC8A140
-int32_t __fastcall D2GAME_SAVE_CalculateChecksum_6FC8A140(D2SaveHeaderStrc* pSaveHeader, int32_t nSize);
+uint32_t __fastcall D2GAME_SAVE_CalculateChecksum_6FC8A140(D2SaveHeaderStrc* pSaveHeader, uint32_t nSize);
 //D2Game.0x6FC8A1B0
-int32_t __fastcall D2GAME_SAVE_WriteFileOnRealm_6FC8A1B0(D2GameStrc* pGame, D2UnitStrc* pPlayer, const char* szCharName, char* szAccountName, int32_t bInteractsWithPlayer, int32_t a6, int32_t a7, int32_t nRealmId);
+int32_t __fastcall D2GAME_SAVE_WriteFileOnRealm_6FC8A1B0(D2GameStrc* pGame, D2UnitStrc* pPlayer, const char* szCharName, char* szAccountName, int32_t bInteractsWithPlayer, int32_t a6, int32_t a7, D2ClientInfoStrc* nRealmId);
 //D2Game.0x6FC8A500
 int32_t __fastcall D2GAME_SAVE_WriteFile_6FC8A500(D2GameStrc* pGame, D2UnitStrc* pPlayer, const char* szName, DWORD dwArg);
 //D2Game.0x6FC8A780

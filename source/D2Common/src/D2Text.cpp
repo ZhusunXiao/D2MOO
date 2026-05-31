@@ -94,7 +94,7 @@ int __stdcall TEXT_GetMenuType2NodeCount(D2TextHeaderStrc* pTextHeader)
 	return nNodes;
 }
 
-//D2Common.0x6FDC33820 (#10906)
+//D2Common.0x6FDC3820 (#10906)
 short __stdcall TEXT_GetStringIdOfMenuType2Node(D2TextHeaderStrc* pTextHeader, int nNodeId)
 {
 	D2TextNodeStrc* pNode = NULL;
