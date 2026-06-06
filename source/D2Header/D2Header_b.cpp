@@ -1,6 +1,7 @@
 #include "D2WinAccountList.h"
 #include "D2WinAnimImage.h"
 #include "D2WinButton.h"
+#include "D2WinControlHeader.h"
 #include "D2WinEditBox.h"
 #include "D2WinFont.h"
 #include "D2WinList.h"
@@ -17,6 +18,10 @@
 #include "D2WRegister.h"
 
 #include "D2Config.h"
+
+// CmnSubtile.h here (not in D2Header_a.cpp) to avoid the D2TileLibraryBlockStrc
+// redefinition with D2CMP.h, which is included by D2Header_a.cpp.
+#include "CmnSubtile.h"
 
 extern "C" __declspec(dllexport) void t2()
 {
@@ -53,5 +58,8 @@ extern "C" __declspec(dllexport) void t2()
     volatile D2WinTimerStrc           D2WinTimerStrc_           = {};
     volatile D2WinCommandRegisterStrc D2WinCommandRegisterStrc_ = {};
 
-    
+    // --- additional types needed by dev/d2/mo (scripts/d2mpre/a.py) ---
+    volatile ButtonFlags    ButtonFlags_    = {};
+    volatile D2ControlTypes D2ControlTypes_ = {};
+    volatile D2PaletteStrc  D2PaletteStrc_  = {};
 }

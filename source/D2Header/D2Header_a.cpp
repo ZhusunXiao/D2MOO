@@ -55,6 +55,8 @@
 #include "DrawMode.h"
 #include "DisplayType.h"
 #include "D2Gfx.h"
+// CmnSubtile.h is included from D2Header_b.cpp instead: it redefines
+// D2TileLibraryBlockStrc which D2CMP.h (included here) already defines.
 // #include "CmnSubtile.h"
 
 // D2CommonDefinitions
@@ -112,6 +114,7 @@
 #include "Path/Path.h"
 #include "Path/PathMisc.h"
 #include "Path/IDAStar.h"
+#include "Path/AStar.h"
 
 #include "Units/Item.h"
 #include "Units/Missile.h"
@@ -849,5 +852,54 @@ extern "C" __declspec(dllexport) void t()
     volatile SMSGHANDLER_PARAMS SMSGHANDLER_PARAMS_ = {};
 
     volatile D2C_StringIndices D2C_StringIndices_ = {};
-    
+
+    // --- additional types needed by dev/d2/mo (scripts/d2mpre/a.py) ---
+    // Fog (Fog.h)
+    volatile AsyncData            AsyncData_            = {};
+    volatile AsyncDataEventSlot   AsyncDataEventSlot_   = {};
+    volatile D2C_AsyncDataFlags   D2C_AsyncDataFlags_   = {};
+    volatile D2C_AsyncDataPriority D2C_AsyncDataPriority_ = {};
+    volatile D2UnkExcelStrc       D2UnkExcelStrc_       = {};
+    // Fog (Calc.h)
+    volatile D2CalcCallbackInfoStrc        D2CalcCallbackInfoStrc_        = {};
+    volatile FOGCalcExpressionParserTokenType FOGCalcExpressionParserTokenType_ = {};
+    volatile FOGExpressionParserContextStrc   FOGExpressionParserContextStrc_   = {};
+    volatile Fog64IntStack        Fog64IntStack_        = {};
+    // Fog (Safesock.h)
+    volatile FSafeSock            FSafeSock_            = {};
+    // D2Game (MISSILES/MissMode.h)
+    volatile D2C_MissileModes     D2C_MissileModes_     = {};
+    // D2Common DataTbls
+    volatile D2C_MissilesHcIdx            D2C_MissilesHcIdx_            = {};
+    volatile D2C_MissilesTxtCollideTypes  D2C_MissilesTxtCollideTypes_  = {};
+    volatile D2C_MonsterAlignment         D2C_MonsterAlignment_         = {};
+    volatile D2C_ObjModes                 D2C_ObjModes_                 = {};
+    volatile D2C_ShrineTypes              D2C_ShrineTypes_              = {};
+    volatile D2Objects                    D2Objects_                    = {};
+    volatile D2C_Skills                   D2C_Skills_                   = {};
+    volatile D2C_SkillsTxtLineOfSight     D2C_SkillsTxtLineOfSight_     = {};
+    // D2Common Drlg
+    volatile D2C_OutDoorInfoFlags         D2C_OutDoorInfoFlags_         = {};
+    volatile D2DrlgOutdoorGridStrc        D2DrlgOutdoorGridStrc_        = {};
+    volatile D2DrlgLogicalRoomInfoFlags   D2DrlgLogicalRoomInfoFlags_   = {};
+    volatile D2UnkDrlgLogicStrc           D2UnkDrlgLogicStrc_           = {};
+    volatile D2JunglePresetFlags          D2JunglePresetFlags_          = {};
+    volatile D2JungleStrc                 D2JungleStrc_                 = {};
+    volatile D2MazeLevelIdStrc            D2MazeLevelIdStrc_            = {};
+    // D2Common Path (AStar.h)
+    volatile D2PathFoWallContextStrc      D2PathFoWallContextStrc_      = {};
+    volatile D2PathFoWallNodeStrc         D2PathFoWallNodeStrc_         = {};
+    // D2Gfx (D2PaletteStrc is in D2Header_b.cpp — see note at CmnSubtile.h)
+    volatile D2GraphicsInterfaceStrc      D2GraphicsInterfaceStrc_      = {};
+    // D2CommonDefinitions (D2Structs.OtherDLLs.h)
+    volatile D2GfxHelperStrc              D2GfxHelperStrc_              = {};
+    volatile D2GfxSettingsStrc            D2GfxSettingsStrc_            = {};
+    volatile D2WindowPlacementStrc        D2WindowPlacementStrc_        = {};
+    // D2Lang
+    volatile D2TblHeaderStrc              D2TblHeaderStrc_              = {};
+    volatile D2TblNodeStrc                D2TblNodeStrc_                = {};
+    // D2CMP
+    volatile D2TileLibraryHeaderStrc      D2TileLibraryHeaderStrc_      = {};
+    volatile D2TileMaterialFlags          D2TileMaterialFlags_          = {};
+    volatile D2TileStrc                   D2TileStrc_                   = {};
 }
